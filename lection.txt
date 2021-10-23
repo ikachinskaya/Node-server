@@ -1,0 +1,75 @@
+HTTP 
+
+CLIENT <=> SERVER
+
+request ==> 
+        <== response
+
+====================
+REQUEST:
+METOD URL VERSION_OF_PROTOCOL                 
+HEADER1 : VALUE1                          
+HEADER2 : VALUE2                          
+HEADER3 : VALUE3                          
+HEADER4 : VALUE4                          
+
+BODY
+===================
+POST https://torrent.net HTTP/1.1
+Content-type: application/json
+Authorization: djfgbier5tkdsfgdsakr37r
+<empty string>
+{"name": "Shindows 12", text: "Лучшая операционка новая версия"}
+==================
+RESPONSE:
+VERSION_OF_PROTOCOL STATUS_CODE STATUS_MESSAGE
+HEADER1 : VALUE1                          
+HEADER2 : VALUE2
+
+BODY
+
+===============
+METHODS
+GET - получение ресурса
+POST - создание ресурса
+PUT - ПОЛНОЕ изменение ресурса
+PATCH - ЧАСТИЧНOE изменение ресурса
+DELETE - удаление ресурса
+
+
+CRUD - Create Read Update Delete
+
+GET https://facebook.com/signup
+POST https://facebook.com/signup
+
+
+PUT https://facebook.com/comments/3 HTTP/1.1
+PATCH https://facebook.com/comments/3
+DELETE https://facebook.com/comments/3
+===========================================
+        СРЕДА ИСПОЛНЕНИЯ    ДВИЖОК  Фреймворк  Первоначальная сборка
+ФРОНТ       браузер           V8      React      create-react-app
+
+БЕК         node              V8      express           js
+======================================================================
+
+ФРОНТ
+  || запрос
+  \/
+(TCP/IP)  HTTP
+  /\
+  || ответы
+БЕК
+
+
+===========DAY 2===========
+  FRONT (VIEW)
+   /\
+ (HTTP)
+(TCP/IP)
+  \/
+ BACK (CONTROLLER)
+  /\
+  ???
+  \/
+DATABASE (***MODEL***)
