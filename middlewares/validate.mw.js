@@ -7,10 +7,11 @@ const USER_SCHEMA = yup.object({
   gender: yup.string().required(),
 });
 
-module.exports.validateUser = (request, response, next) => {
-  USER_SCHEMA.validate(request.body)
-    .then(() => {
-      next();
-    })
-    .catch((error) => response.status(400).send(error.message));
+module.exports.validateUser = async (request, response, next) => {
+  try {
+    await USER_SCHEMA.validate(request.body);
+    next();
+  } catch (error) {
+    response.status(400).send(error.message);
+  }
 };
